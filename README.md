@@ -35,11 +35,12 @@ Provides `express` and `express/routes` directory to write express routes within
 const {Router} = require('express')
 const router = Router()
 
-router.get('/api/test', (req, res) => {
-  res.send('hello')
-})
-
-module.exports = router
+module.exports = () => {
+  router.get('/api/test', (req, res) => {
+    res.send('hello')
+  })
+  return router
+}
 
 ```
 

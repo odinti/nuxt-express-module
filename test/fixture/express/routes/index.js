@@ -1,8 +1,9 @@
-const {Router} = require('express')
+const { Router } = require('express')
 const router = Router()
 
-router.get('/api/test', (req, res) => {
-  res.send('testing success')
-})
-
-module.exports = router
+module.exports = (app) => {
+  router.get('/api/test', (req, res) => {
+    res.send('testing success')
+  })
+  return router
+}
